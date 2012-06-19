@@ -51,6 +51,14 @@ class hello:
             name = 'World'
         return 'Hello, ' + name + '!'
 
+class Delete:
+
+    def POST(self, id):
+        """ Delete based on ID """
+        id = int(id)
+        model.del_todo(id)
+        raise web.seeother('/')
+
 application = web.application(urls, globals()).wsgifunc()
 
 #

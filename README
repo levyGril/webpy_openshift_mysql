@@ -52,3 +52,17 @@ Notes about setup.py
 
 Adding deps to the install_requires will have the openshift server actually
 install those deps at git push time.
+
+
+Notes about the demo
+====================
+$ rhc-create-app -a <appname> -t python-2.6 -l <login email>
+$ rhc-ctl-app -a <appname> -e add-mysql-5.1
+$ rhc-ctl-app -e add-phpmyadmin-3.4 -a <appname>
+
+after the third step, you will get a web address, it generally looks like this 
+(https://<appname>-<domain>.rhcloud.com/phpmyadmin), please login and create a 
+table which named todo using the schema.sql file.
+
+
+Good luck!
